@@ -1,0 +1,416 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Signika' !important;
+	font-weight: 700 !important;
+}
+
+@font-face {
+	font-family: Signika;
+	src: url(../../../fuentes/Signika-Bold.ttf);
+}
+
+body {
+	background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.table-box {
+	width: 1000px;
+	height: 400px;
+	overflow-y: scroll;
+	background: #fff;
+	box-shadow: 0 10px 100px rgba(0, 0, 0, .5);
+}
+
+header {
+	width: 100%;
+	display: flex;
+	padding: 20px 0;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header h1 {
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 600;
+	color: #393A58;
+	display: inline-block;
+}
+
+.botones {
+	width: 65px;
+}
+
+button.editar_btn:hover {
+	cursor: pointer;
+}
+
+button.editar_btn {
+	width: 30px;
+	height: 30px;
+	background: #3498db;
+	float: left;
+	margin-right: 5px;
+	border-style: none;
+}
+
+button.eliminar_btn:hover {
+	cursor: pointer;
+}
+
+button.eliminar_btn {
+	border-style: none;
+	width: 30px;
+	height: 30px;
+	background: #c40018;
+	float: left;
+}
+
+.btn {
+	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
+	border: none;
+	color: #fff;
+	background: #54B53D;
+	cursor: pointer;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	border-radius: 100px;
+}
+
+header button.active {
+	display: inline-block;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+}
+
+.formulario {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	transition: .3s ease all;
+}
+
+.formulario input {
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	text-align: center;
+	border: none;
+	margin: 0 px;
+}
+
+.formulario .btn {
+	background: #3498db;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 0;
+}
+
+.error_box {
+	background: #c40018;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	font-size: 12px;
+	line-height: 12px;
+	display: none;
+}
+
+.error_box.active {
+	display: block;
+}
+
+table {
+	width: 100%;
+	background: #fff;
+	border-collapse: collapse;
+	text-align: center;
+	margin-bottom: 80px;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+table,
+td,
+th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: left;
+	padding: 10px;
+}
+
+th {
+	background: #54B53D;
+	font-size: 16px;
+	position: sticky;
+	top: 0;
+}
+
+td {
+	font-size: 14px;
+}
+
+.loader {
+	margin: auto;
+	display: none;
+	border: 5px solid #f3f3f3;
+	/* Light grey */
+	border-top: 5px solid #3ead47;
+	/* Blue */
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	animation: spin 2s linear infinite;
+}
+
+.loader.active {
+	display: block;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.table-box::-webkit-scrollbar {
+	width: 12px;
+	height: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+.table-box::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 4px;
+}
+
+.table-box::-webkit-scrollbar-thumb:active {
+	background-color: #999999;
+}
+
+.table-box::-webkit-scrollbar-thumb:hover {
+	background: #54B53D;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+.table-box::-webkit-scrollbar-track {
+	background: #e1e1e1;
+	border-radius: 4px;
+}
+
+.table-box::-webkit-scrollbar-track:hover,
+.table-box::-webkit-scrollbar-track:active {
+	background: #d4d4d4;
+}
+
+.modal {
+	display: none;
+}
+
+.modal1 {
+	display: none;
+}
+
+.cuadro_editar {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.cuadro_eliminar {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.f_editar {
+	padding: 50px;
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 40%;
+	background: rgba(0, 0, 0, 0.8);
+	width: 300px;
+}
+
+.f_eliminar {
+	padding: 40px;
+	/* display: none; */
+	position: absolute;
+	top: 25%;
+	left: 40%;
+	background: #fff;
+	width: 300px;
+	text-align: center;
+}
+
+.f_editar input {
+	width: 200px;
+	height: 40px;
+}
+
+.aviso_eliminar p {}
+
+.botons {
+	position: absolute;
+	left: 45.5%;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.acept {
+	margin-top: 40px;
+}
+
+.modal-content p {
+	margin-top: 15px;
+	padding: 25px;
+	text-align: center;
+}
+
+.formulario_editar input {
+	width: 85%;
+	height: 40px;
+}
+
+.formulario_editar {
+	padding-top: 40px;
+}
+
+.cuad1 .modal-content {
+	background: #fff;
+	margin: auto;
+	border: 1px solid #3ead47;
+	width: 340px;
+	height: 340px;
+	position: absolute;
+	top: 25%;
+	padding-left: 40px;
+	left: 40%;
+}
+
+.cuad2 .modal-content {
+	background: #fff;
+	margin: auto;
+	border: 1px solid #3ead47;
+	width: 350px;
+	height: 170px;
+	position: absolute;
+	top: 25%;
+	left: 36%;
+}
+
+.cuad1 {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.cuad2 {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+/* The Close Button */
+.cuadros {
+	width: 10%;
+	background: #3ead47;
+	height: 30px;
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	/* position: absolute; */
+	/* right: 139px; */
+
+
+}
+
+.formulario_editar input[type="submit"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+	margin-right: 20px;
+}
+
+.formulario_editar input[type="button"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #c40018;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+}
+
+.cuad2 .modal-content input[type="submit"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	margin-left: 65px;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+	margin-right: 20px;
+}
+
+.cuad2 .modal-content input[type="button"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #c40018;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+}
+
+.close {
+	margin-left: 10px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

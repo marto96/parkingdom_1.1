@@ -1,0 +1,170 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Signika' !important;
+	font-weight: 700 !important;
+}
+
+@font-face {
+	font-family: Signika;
+	src: url(../../../fuentes/Signika-Bold.ttf);
+}
+
+body {
+	width: 100%;
+	font-family: 'Open sans';
+	padding: 0 10% 0;
+	background: rgba(0, 0, 0, 0.5);
+
+}
+
+.loginbox {
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 36px 30px;
+	box-sizing: border-box;
+	width: 330px;
+	margin: 40PX auto;
+	position: relative;
+	background: white;
+}
+
+#placa {
+	text-transform: uppercase;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 45%;
+	box-sizing: border-box;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+.loginbox input[type="text"],
+select#tipovehiculo {
+	text-transform: uppercase;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	color: #2C3E50;
+	font-size: 13px;
+	height: 40px;
+	color: green;
+	font-size: 16px;
+	width: 95%;
+
+}
+
+.loginbox p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.loginbox input[type="submit"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.loginbox input[type="button"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #c40018;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.loginbox input,
+select {
+	width: 45%;
+	margin-bottom: 20px;
+}
+
+span {
+	color: #3ead47;
+}
+
+#placa {
+	margin-right: 15px;
+	margin-bottom: 20px;
+}
+
+#bloque {
+	display: none;
+}
+
+.loginbox input[type="submit"]:hover {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.loginbox input[type="button"]:hover {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #c40018;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.bloque {
+	width: 100%;
+	float: left;
+}
+
+.bloque input {
+	width: 80%;
+}
+
+.error_box {
+	background: #c40018;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	font-size: 12px;
+	line-height: 12px;
+	display: none;
+}
+
+.error_box.active {
+	display: block;
+}
+
+.correcto_box {
+	background: #3ead47;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	font-size: 12px;
+	line-height: 12px;
+	display: none;
+}
+
+.correcto_box.active {
+	display: block;
+}

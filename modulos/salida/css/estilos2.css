@@ -1,0 +1,108 @@
+*{
+	font-family: 'Signika'!important;
+    font-weight: 700!important;
+}
+@font-face {
+    font-family: Signika;
+	src:url(../../../fuentes/Signika-Bold.ttf);
+   }
+.loginbox {
+	width: 60%;
+	height: 60%;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 6% 3%;
+}
+
+.loginbox input[type="text"],
+select#tipovehiculo {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: green;
+	font-size: 16px;
+	margin-bottom: 20%;
+}
+
+.loginbox p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.loginbox input[type="submit"] {
+	border: none;
+	outline: none;
+	width: 40%;
+	height: 40px;
+	top: 70%;
+	left: 50%;
+	position: absolute;
+	background: #000;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+	border: 1px solid;
+}
+
+table {
+	border: none;
+	outline: none;
+	top: 15%;
+	left: 10%;
+	position: absolute;
+	width: 80%;
+	height: 80px;
+	background: rgba(255, 255, 255, 0.8);
+	color: #000;
+	font-size: 18px;
+	/* border-radius: 20px; */
+	border: 1px solid #000;
+	text-transform: uppercase;
+}
+
+.loginbox input[type="button"] {
+	border: none;
+	outline: none;
+	width: 40%;
+	height: 40px;
+	top: 70%;
+	left: 10%;
+	position: absolute;
+	background: #000;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+	border: 1px solid;
+}
+
+.loginbox input,
+select {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+span {
+	color: green;
+}
+
+.loginbox input[type="submit"]:hover {
+	cursor: pointer;
+	background: #3ead47;
+	color: black;
+	border: 1px solid black;
+}
+
+.loginbox input[type="button"]:hover {
+	cursor: pointer;
+	background: red;
+	color: black;
+	border: 1px solid black;
+}

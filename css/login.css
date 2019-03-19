@@ -1,0 +1,368 @@
+* {
+
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Signika' !important;
+	font-weight: 700 !important;
+}
+
+@font-face {
+	font-family: Signika;
+	src: url(../fuentes/Signika-Bold.ttf);
+}
+
+body {
+	width: 100%;
+	background-image: url(../imagenes/serge-kutuzov-229068-unsplash.jpg);
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.inputBox {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+.box .inputBox label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 20px;
+	color: #fff;
+	pointer-events: none;
+	transition: .5s;
+	letter-spacing: 1px;
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label {
+
+	top: -18px;
+	left: 0;
+	color: #3ead47;
+	font-size: 15px;
+}
+
+.box input[type="submit"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 370px;
+	padding: 40px;
+	background: rgba(0, 0, 0, 0.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+
+.box a {
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 20px;
+	color: darkgray;
+}
+
+.box a:hover {
+	color: #3ead47;
+}
+
+.box h2 {
+	margin: 20px 0 40px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+
+.box .inputBox {
+	position: relative;
+}
+
+.box .inputBox input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+
+.box .inputBox input:focus {
+	border-bottom: 1px solid #3ead47;
+}
+
+.avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+
+}
+
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	padding-top: 140px;
+	/* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.8);
+	/* Black w/ opacity */
+}
+
+.correo_rec:focus {
+	outline: 2px solid #3ead47;
+}
+
+.correo_rec {
+	width: 230px;
+	height: 30px;
+}
+
+/* Modal Content */
+.botons {
+	position: relative;
+	left: 35%;
+	margin: auto;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.btons {
+	position: relative;
+	margin: auto;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.acept {
+	margin-top: 7px;
+}
+
+.corre {
+
+	background: #fff;
+	margin: auto;
+	border: 0px solid #3ead47;
+	width: 180px;
+	height: 20px;
+	text-align: center;
+	position: relative;
+	top: 0px;
+	left: 0px;
+
+}
+
+.modal-content p {
+	padding: 25px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.cuad1 .modal-content {
+	background: #fff;
+	margin: auto;
+	border: 1px solid #3ead47;
+	width: 350px;
+	height: 130px;
+	-webkit-animation: tiembla 0.3s;
+
+}
+
+.cuad2 .modal-content {
+	background: #fff;
+	margin: auto;
+	border: 1px solid #3ead47;
+	width: 350px;
+	height: 170px;
+	-webkit-animation: tiembla 2000ms linear 0s 1 normal none running;
+}
+
+.cuad3 .modal-content {
+	background: #fff;
+	margin: auto;
+	border: 1px solid #3ead47;
+	width: 350px;
+	height: 170px;
+	-webkit-animation: tiembla 0.3s;
+}
+
+.cuad4 .modal-content {
+	    background: #fff;
+    margin: auto;
+    border: 1px solid #3ead47;
+    width: 481px;
+    height: 179px;
+    -webkit-animation: tiembla 2000ms linear 0s 1 normal none running;
+}
+
+.img_error {
+    width: 70px;
+    float: left;
+    margin-top: 35px;
+    margin-left: 35px;
+}
+
+.texto_err {
+	padding: 25px;
+	padding-bottom: 10px;
+	text-align: center;
+	float: left;
+	width: 340px;
+}
+
+.btn_err {
+	float: left;
+	left: 200px;
+}
+
+@-webkit-keyframes tiembla {
+	0% {
+		-webkit-transform: translate(0px);
+	}
+
+	10% {
+		-webkit-transform: translate(-10px);
+	}
+
+	20% {
+		-webkit-transform: translate(10px);
+	}
+
+	30% {
+		-webkit-transform: translate(-10px);
+	}
+
+	40% {
+		-webkit-transform: translate(10px);
+	}
+
+	50% {
+		-webkit-transform: translate(-10px);
+	}
+
+	60% {
+		-webkit-transform: translate(10px);
+	}
+
+	70% {
+		-webkit-transform: translate(-0px);
+	}
+
+	80% {
+		-webkit-transform: translate(10px);
+	}
+
+	90% {
+		-webkit-transform: translate(-10px);
+	}
+
+	100% {
+		-webkit-transform: rotateZ(0px);
+	}
+}
+
+/* The Close Button */
+.cuadros {
+	width: 7%;
+	background: #3ead47;
+	height: 30px;
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	/* position: absolute; */
+	/* right: 139px; */
+
+
+}
+
+.close {
+	margin-left: 10px;
+}
+
+.close:hover,
+.close1:hover,
+.close3:hover,
+.close4:hover,
+.close5:hover,
+.close6:hover,
+.close:focus,
+.close1:focus,
+.close3:focus,
+.close4:focus,
+.close5:focus,
+.close6:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.close1 {
+	margin-left: 10px;
+
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		width: 100%;
+		background-image: url(../imagenes/serge-kutuzov-229068-unsplash.jpg);
+		margin: 0;
+		padding: 0;
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: inherit;
+	}
+}
