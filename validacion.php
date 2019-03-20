@@ -1,4 +1,4 @@
-﻿ 
+ 
 <?php 
 
 
@@ -15,9 +15,9 @@ $token= generartoken();
 
 
 
-$registros=mysqli_query($conexion,'select usuario,password,correo,nombre,apellidos,token,activacion
-                        from usuario where correo='$correo'') or
-  die('Problemas en el select:'.mysqli_error($conexion));
+$registros=mysqli_query($conexion,"select usuario,password,correo,nombre,apellidos,token,activacion
+                        from usuario where correo='$correo'") or
+  die("Problemas en el select:".mysqli_error($conexion));
 
 
 
@@ -27,12 +27,12 @@ if ($reg=mysqli_fetch_array($registros)){
   if($reg['correo']=$correo){
       
       if ($reg['activacion']==0){
-            $solicitud=mysqli_query($conexion,'update usuario set token='$token',activacion='1' where correo='$correo' ') or
-                die('Problemas en el select:'.mysqli_error($conexion));
+            $solicitud=mysqli_query($conexion,"update usuario set token='$token',activacion='1' where correo='$correo' ") or
+                die("Problemas en el select:".mysqli_error($conexion));
       
-          $url='http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/Parkingdom/activar.php?mail='.$correo.'&val='.$token;
+          $url="http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."/Parkingdom/activar.php?mail=".$correo."&val=".$token;
           
-          $asunto = 'Reestablecimiento de contraseña PARKINGDOM';
+          $asunto = "Reestablecimiento de contraseña PARKINGDOM";
 //          $cuerpo = 'Estimado '.$reg['nombre'].' '.$reg['apellidos'].': <br /><br /> Para continuar con el reestablecimiento de la contraseña, debe dar click en el siguiente enlace: <a href='$url'> Reestablecer contraseña</a> ';  
 		  
 		   $cuerpo = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
