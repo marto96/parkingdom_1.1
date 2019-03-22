@@ -1,5 +1,6 @@
 <?php
-$conexion = new PDO('mysql:host=localhost;dbname=parkingdom','root','');
+include "../../conexion/conexion.php";
+//$conexion = new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom');
 
 	// datos clientes
 	$nombre = $_POST['nombres'];
@@ -19,7 +20,7 @@ $conexion = new PDO('mysql:host=localhost;dbname=parkingdom','root','');
 	$observaciones = $_POST['observaciones'];
 
 
-	$consulta = $conexion-> prepare("INSERT INTO `parkingdom`.`persona` (`num_documento`, `tipo_documento`, `nombre`, `apellido`, `direccion`, `correo`, `telefono`, `observaciones`) VALUES ( :numero_documento, :tipo_documento, :nombre, :apellidos, :direccion, :correo_electronico, :telefono, :observaciones)");
+	$consulta = $conexion-> prepare("INSERT INTO `persona` (`num_documento`, `tipo_documento`, `nombre`, `apellido`, `direccion`, `correo`, `telefono`, `observaciones`) VALUES ( :numero_documento, :tipo_documento, :nombre, :apellidos, :direccion, :correo_electronico, :telefono, :observaciones)");
 
 	$consulta1 = $conexion-> prepare("INSERT INTO `vehiculos`(`placa_vehi`, `modelo`, `color`, `marca`, `tipo_vehiculo`) VALUES (:placa, :modelo, :color, :marca, :tipo_vehiculo)");
 

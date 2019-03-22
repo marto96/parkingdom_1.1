@@ -1,8 +1,8 @@
 <?php
-include "seguridad/seguridad.php";
-?>
-<?php
-$conexion = new PDO('mysql:host=localhost;dbname=parkingdom','root','');
+include "../../seguridad/seguridad.php";
+include "../../conexion/conexion.php";
+
+//$conexion = new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom');
 	// datos operario
 	$nombres = $_POST['nombres'];
 	$apellidos = $_POST['apellidos'];

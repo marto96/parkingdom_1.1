@@ -55,12 +55,12 @@
 			<div class="cuadros">
 				<span class="close">&times;</span></div>
 			<form action="" method="" id="formulario_editar" class="formulario_editar">
-				<input type="text" name="placa" id="placa_editar" placeholder="Placa"><br /><br />
+				<input type="text" name="id" id="id" placeholder="id" style="display:none;"><input type="text" name="placa" id="placa_editar" placeholder="Placa"><br /><br />
 				<input type="text" name="valor" id="valor_editar" placeholder="Valor Mensualidad"><br /><br />
 				<input type="date" name="fecha_inicio" id="fecha_inicio_editar" placeholder="Fecha Inicio"><br /><br />
 				<input type="date" name="fecha_fin" id="fecha_fin_editar" placeholder="Fecha Fin"><br /><br />
-				<input type="submit" value="Enviar">
 				<input id="botonWindowClose" type="button" onclick="_enviarAlPadre()" value="Cancelar">
+				<input type="submit" value="Cambiar" id="cambiar"/>
 			</form>
 
 		</div>
@@ -71,11 +71,13 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="cuadros">
-				<span class="close">&times;</span></div>
-			<p>¿Esta seguro de eliminar el registro?</p>
-			<input type="submit" value="Enviar">
+			<span class="close">&times;</span></div>
+			<form action="" method="" id="formulario_eliminar" class="formulario_eliminar">
+			<input type="text" name="id" id="ide" placeholder="id" style="display:none;"><input type="text" name="placa" id="placa_eliminar" style="display:none;" placeholder="Placa">				
+			<p>¿Esta seguro de eliminar el registro de la placa?</p>
 			<input id="botonWindowClose" type="button" onclick="_enviarAlPadre()" value="Cancelar">
-
+			<input type="submit" value="Eliminar" id="eliminar"/>
+</form>
 		</div>
 
 	</div>

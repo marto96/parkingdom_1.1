@@ -1,9 +1,11 @@
 <?php
+
+include "../../conexion/conexion.php";
    try{
-    $conexion = new PDO('mysql:host=localhost;dbname=parkingdom','root','',array( PDO::ATTR_EMULATE_PREPARES=>false,
-    PDO::MYSQL_ATTR_DIRECT_QUERY=>false,
-    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION
-));
+   // $conexion = new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom',array( PDO::ATTR_EMULATE_PREPARES=>false,
+    //PDO::MYSQL_ATTR_DIRECT_QUERY=>false,
+    //PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION
+//));
 
 
         $statement = $conexion->prepare("SELECT espacio_tr  FROM transaccion where hora_salida is null");

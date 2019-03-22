@@ -41,7 +41,7 @@ include "../../seguridad/seguridad.php";
 			<input type="text" id="n_ubicacion" placeholder="N° Ubicación" name="ubicacion" disabled required>
 			<br>
 			<input id="botonWindowClose" type="button" onclick="_enviarAlPadre()" value="Cancelar">
-			<input type="submit" value="Enviar">
+			<input type="submit" value="Enviar" id="enviop">
 		</form>
 	</div>
 	<iframe class="iframe" id="iframe" src="../impresiones/cupos.php" frameborder="0"></iframe>

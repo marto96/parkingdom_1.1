@@ -13,9 +13,9 @@ function objetoAjax() {
 	return a
 }
 
-function enviarDatos(a) {
-	a.preventDefault();
-	a = document.getElementById("placa").value;
+function enviarDatos() {
+	
+	 var a = document.getElementById("placa").value;
 	var c = document.getElementById("tipovehiculo").value,
 		b = document.getElementById("n_ubicacion").value,
 		f = document.getElementById("placa"),
@@ -25,15 +25,15 @@ function enviarDatos(a) {
 	ajax = objetoAjax();
 	ajax.open("POST", "ingreso.php", !0);
 	ajax.onreadystatechange = function () {
-		4 == ajax.readyState && 200 == ajax.status && (e = ajax.responseText,
+		4 == ajax.readyState && 200 == ajax.status && (e = ajax.responseText,console.log(e),
 			"correcto" == e ? (correcto_box.classList.add("active"),
 				error_box.classList.remove("active"), f.value = "", d.value = "", g.value = "") : "incorrecto" == e ? (error_box.classList.add("active"), error_box.innerHTML = "No se inserto el registro, Intente de Nuevo") : "retorno" == e && (error_box.classList.add("active"), error_box.innerHTML = "La placa ingresada ya ha sido registrada previamente, Verifique por favor")
 		)
 	};
 	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	a = "placa=" + a + "&tipovehiculo=" + c + "&ubicacion=" + b;
-	//console.log(a);
-	ajax.send(a)
+	w = "placa=" + a + "&tipovehiculo=" + c + "&ubicacion=" + b;
+	console.log(w);
+	ajax.send(w)
 }
 
 function enviarDatosMensual() {
@@ -104,8 +104,10 @@ seleccion_moto.addEventListener("click", function (a) {
 seleccion_auto.addEventListener("click", function (a) {
 	seleccionUbicacion_auto(a)
 });
-formulario.addEventListener("submit", function (a) {
-	enviarDatos(a)
+var formulariop = document.getElementById("enviop");
+formulariop.addEventListener("click", function (a) {
+	a.preventDefault();
+	enviarDatos(a);
 });
 
 function seleccionUbicacion_auto(a) {
