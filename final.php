@@ -1,8 +1,9 @@
 <?php
 
 
-   $conexion=mysqli_connect("localhost","root","","parkingdom") or
-    die("Problemas con la conexión");
+include "conexion/conexion,.php";
+   //$conexion=mysqli_connect("localhost","u858238889_root","parkingdom","u858238889_park") or
+    //die("Problemas con la conexión");
 
 session_start();
     

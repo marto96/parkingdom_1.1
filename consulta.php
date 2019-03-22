@@ -1,8 +1,10 @@
 <?php
+
+include "conexion/conexionm.php";
 error_reporting(0);
 header('Content-type: application/json; charset=utf-8');
 //try{
-    $conexion = new mysqli('localhost','root','','parkingdom');
+   // $conexion = new mysqli('localhost','u858238889_root','parkingdom','u858238889_park');
     //
 //}catch(PDOException $e){
 //    echo "Error: " . $e->getMessage();

@@ -1,6 +1,8 @@
 <?php
 try{
-      $conexion= new PDO('mysql:host=localhost;dbname=parkingdom','root','');
+     
+include "conexion/conexion.php";
+      //$conexion= new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom');
   }catch(PDOException $e){
       echo "Error:" . $e->getMessage();
   }
