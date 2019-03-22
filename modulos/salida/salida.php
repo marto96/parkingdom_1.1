@@ -1,9 +1,12 @@
 <?php
+
+include "../../conexion/conexion.php";
 try{
+    
 //	error_reporting(0);
 
 	//header('Content-type: application/json; charset=utf-8');
-    $conexion = new PDO('mysql:host=localhost;dbname=parkingdom','root','');
+    //$conexion = new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom');
 
 	date_default_timezone_set("America/Bogota");
 	$placa=$_POST['placa'];

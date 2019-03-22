@@ -1,6 +1,6 @@
 <?php 
 
-	 $conexion = new PDO('mysql:host=localhost;dbname=parkingdom','root','');
+	 $conexion = new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom');
 
  ?>
 

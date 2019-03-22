@@ -14,6 +14,25 @@ var usuario_placa,
 	usuario_fecha_fin;
 
 
+function objetoAjax() {
+	var xmlhttp = false;
+	try {
+		xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch (e) {
+
+		try {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch (E) {
+			xmlhttp = false;
+		}
+	}
+
+	if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+		xmlhttp = new XMLHttpRequest();
+	}
+	return xmlhttp;
+}
+
 function AddMes() {
 	var fecha = new Date(obj.value);
 	fecha.setMonth(fecha.getMonth() + 1);
@@ -69,9 +88,10 @@ function cargarUsuarios() {
 				var fecha_fin = $(this).closest('tr').children()[3].textContent;
 				var estado = $(this).closest('tr').children()[4].textContent;
 				var valor = $(this).closest('tr').children()[5].textContent;
-fecha_i = formato(fecha_inicio);
-fecha_f = formato(fecha_fin);
+				fecha_i = formato(fecha_inicio);
+				fecha_f = formato(fecha_fin);
 				console.log(fecha_i);
+				document.getElementById('id').value = id;
 				document.getElementById('placa_editar').value = placa;
 				document.getElementById('valor_editar').value = valor;
 				document.getElementById('fecha_inicio_editar').value = fecha_inicio;
@@ -80,19 +100,23 @@ fecha_f = formato(fecha_fin);
 				span.onclick = function () {
 					modal.style.display = "none";
 				}
-			function formato(fecha_inicio){
-				return fecha_inicio.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
-			}
+
+				function formato(fecha_inicio) {
+					return fecha_inicio.replace(/^(\d{4})-(\d{2})-(\d{2})$/g, '$3/$2/$1');
+				}
 
 			});
 			$(".eliminar_btn").on("click", function () {
 				modal1.style.display = "block";
+				var id = $(this).closest('tr').children()[0].textContent;
 				var placa = $(this).closest('tr').children()[1].textContent;
-				$(".cuadros p").innerHTML = placa;
+				document.getElementById('ide').value = id;
+				document.getElementById('placa_eliminar').value = placa;
 				span1.onclick = function () {
 					modal1.style.display = "none";
 				}
 			});
+
 
 			//			var editar = document.getElementsByClassName('editar_btn');
 			//			var eliminar = document.getElementsByClassName('eliminar_btn');
@@ -150,11 +174,102 @@ function formulario_valido() {
 	return true;
 
 }
+$("#cambiar").on("click", function (e) {
+	e.preventDefault();
+	modificarPago();
+});
+$("#eliminar").on("click", function (e) {
+	e.preventDefault();
+	eliminarPago();
+});
+
+function eliminarPago() {
+	ajax = objetoAjax();
+	ajax.open("POST", "eliminar.php", !0);
+
+	usuario_id = formulario_eliminar.ide.value.trim();
+
+	var modal = document.getElementById('myModal1');
+
+
+
+	error_box.classList.remove('active');
+	var parametros = 'id=' + usuario_id;
+	console.log(parametros);
+
+
+	loader.classList.add('active');
+
+	ajax.onreadystatechange = function () {
+
+		if (ajax.readyState == 4 && ajax.status == 200) {
+			loader.classList.remove('active');
+			var recibido = (ajax.responseText);
+			console.log(recibido);
+			if (recibido != "error") {
+				modal.style.display = "none";
+				cargarUsuarios();
+
+			} else {
+				error_box.classList.add('active');
+				error_box.innerHTML = 'No se pudo eliminar el registro, Verifique por favor.';
+			}
+		}
+	}
+	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	ajax.send(parametros);
+
+}
+
+
+function modificarPago() {
+	ajax = objetoAjax();
+	ajax.open("POST", "insertar.php", !0);
+
+	usuario_placa = formulario_editar.placa.value.trim();
+	usuario_fecha_inicio = formulario_editar.fecha_inicio.value.trim();
+	usuario_fecha_fin = formulario_editar.fecha_fin.value.trim();
+	usuario_valor_mes = formulario_editar.valor.value.trim();
+	usuario_id = formulario_editar.id.value.trim();
+	var modal = document.getElementById('myModal');
+
+
+
+	error_box.classList.remove('active');
+	var parametros = 'placa=' + usuario_placa + '&fecha_inicio=' + usuario_fecha_inicio + '&valor_mes=' + usuario_valor_mes + '&fecha_fin=' + usuario_fecha_fin+ '&id=' + usuario_id;
+	console.log(parametros);
+
+
+	loader.classList.add('active');
+
+	ajax.onreadystatechange = function () {
+
+		if (ajax.readyState == 4 && ajax.status == 200) {
+			loader.classList.remove('active');
+			var recibido = (ajax.responseText);
+			console.log(recibido);
+			if (recibido != "error") {
+				modal.style.display = "none";
+				cargarUsuarios();
+				formulario.placa.value = '';
+				formulario.fecha_inicio.value = '';
+				formulario.fecha_fin.value = '';
+			} else {
+				error_box.classList.add('active');
+				error_box.innerHTML = 'La placa ingresada no tiene mensualidad, Verifique por favor.';
+			}
+		}
+	}
+	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	ajax.send(parametros);
+
+}
+
 function agregarUsuarios(e) {
 	e.preventDefault();
 
-	var peticion = new XMLHttpRequest();
-	peticion.open('POST', 'insertar.php');
+	ajax = objetoAjax();
+	ajax.open("POST", "insertar.php", !0);
 
 	usuario_placa = formulario.placa.value.trim();
 	usuario_fecha_inicio = formulario.fecha_inicio.value.trim();
@@ -164,35 +279,31 @@ function agregarUsuarios(e) {
 
 	if (formulario_valido()) {
 		error_box.classList.remove('active');
-		var parametros = 'placa=' + usuario_placa + '&fecha_inicio=' + usuario_fecha_inicio + '&fecha_fin=' + usuario_fecha_fin+'&valor_mes='+ usuario_valor_mes;
+		var parametros = 'placa=' + usuario_placa + '&fecha_inicio=' + usuario_fecha_inicio + '&valor_mes=' + usuario_valor_mes + '&fecha_fin=' + usuario_fecha_fin;
 		console.log(parametros);
 
-		peticion.setRequestHeader("Content_Type", "application/x-www-form-urlencoded");
 
 		loader.classList.add('active');
 
-		peticion.onload = function () {
-			
-		}
+		ajax.onreadystatechange = function () {
 
-		peticion.onreadystatechange = function () {
-			
-			if (peticion.readyState == 4 && peticion.status == 200) {
+			if (ajax.readyState == 4 && ajax.status == 200) {
 				loader.classList.remove('active');
-				var recibido = (ajax.responseText)
+				var recibido = (ajax.responseText);
 				console.log(recibido);
 				if (recibido != "error") {
 					cargarUsuarios();
-			formulario.placa.value = '';
-			formulario.fecha_inicio.value = '';
-			formulario.fecha_fin.value = '';
+					formulario.placa.value = '';
+					formulario.fecha_inicio.value = '';
+					formulario.fecha_fin.value = '';
 				} else {
 					error_box.classList.add('active');
 					error_box.innerHTML = 'La placa ingresada no tiene mensualidad, Verifique por favor.';
 				}
 			}
 		}
-		peticion.send(parametros);
+		ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		ajax.send(parametros);
 
 	} else {
 		error_box.classList.add('active');
@@ -201,24 +312,6 @@ function agregarUsuarios(e) {
 
 }
 
-function objetoAjax() {
-	var xmlhttp = false;
-	try {
-		xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-	} catch (e) {
-
-		try {
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		} catch (E) {
-			xmlhttp = false;
-		}
-	}
-
-	if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
-		xmlhttp = new XMLHttpRequest();
-	}
-	return xmlhttp;
-}
 placa.addEventListener('focus', function (e) {
 	error_box.classList.remove('active');
 	valor.value = '';
@@ -250,7 +343,7 @@ placa.addEventListener('focusout', function (e) {
 				respuesta = (ajax.responseText)
 				//console.log(respuesta);
 				if (respuesta != "error") {
-					valor.value =  respuesta;
+					valor.value = respuesta;
 					valor.setAttribute("disabled", "true");
 				} else {
 					error_box.classList.add('active');
