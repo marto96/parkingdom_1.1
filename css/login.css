@@ -227,15 +227,15 @@ body {
 	border: 1px solid #3ead47;
 	width: 350px;
 	height: 170px;
-	-webkit-animation: tiembla 2000ms linear 0s 1 normal none running;
+	-webkit-animation: tiembla 0.3s;
 }
 
 .cuad3 .modal-content {
 	background: #fff;
 	margin: auto;
 	border: 1px solid #3ead47;
-	width: 350px;
-	height: 170px;
+	width: 480px;
+	height: 179px;
 	-webkit-animation: tiembla 0.3s;
 }
 
@@ -245,7 +245,7 @@ body {
     border: 1px solid #3ead47;
     width: 481px;
     height: 179px;
-    -webkit-animation: tiembla 2000ms linear 0s 1 normal none running;
+	-webkit-animation: tiembla 0.3s;
 }
 
 .img_error {

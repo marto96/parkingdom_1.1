@@ -48,7 +48,7 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="cuadros">
-				<span class="close1">&times;</span></div>
+				<span class="close1" >&times;</span></div>
 			<form name="recuperar1" method="post" onSubmit="envio(); return false">
 				<p>Ingrese su correo Electronico de verificación</p>
                 <table class="corre" >
@@ -66,10 +66,10 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="cuadros">
-				<span class="close">&times;</span></div>
-			<img src="imagenes/correcto.svg" alt="">
-			<p>Correo de recuperación se ha enviado correctamente</p>
-			<button class="close botons">Aceptar</button>
+				<span class="close" id="close1">&times;</span></div>
+			<img class="img_error" src="imagenes/correcto.svg" alt="">
+			<p id="texto_erri" class="texto_err">Correo de recuperación se ha enviado correctamente</p>
+			<button id="correcto" class="close botons btn_err">Aceptar</button>
 		</div>
 
 	</div>
@@ -78,10 +78,10 @@
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="cuadros">
-				<span class="close">&times;</span></div>
+				<span class="closes" id="closes">&times;</span></div>
 			<img class="img_error"src="imagenes/error.png" alt="Error">
 			<p id="texto_err" class="texto_err">Se ha presentado un problema al enviar Correo de recuperación.<br> verifique por favor</p>
-			<button class="close botons btn_err">Aceptar</button>
+			<button id="aceptar" class="close botons btn_err">Aceptar</button>
 		</div>
 
 	</div>

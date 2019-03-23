@@ -1,7 +1,7 @@
 <?php
 
 
-include "conexion/conexion,.php";
+include "conexion/conexionm.php";
    //$conexion=mysqli_connect("localhost","u858238889_root","parkingdom","u858238889_park") or
     //die("Problemas con la conexión");
 

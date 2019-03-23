@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 header('Content-Type: text/html; charset=UTF-8');
     
 //$conexion=mysqli_connect('localhost','u858238889_root','parkingdom','u858238889_park') or
-    die('Problemas con la conexión');
+    //die('Problemas con la conexión');
 
 $correo= $_REQUEST['correo_rec'];
 $token= generartoken();

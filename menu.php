@@ -288,6 +288,7 @@ include "seguridad/seguridad.php";
 		});
 
 	</script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script src="js/funciones.js" type="text/javascript"></script>
 
 </body>

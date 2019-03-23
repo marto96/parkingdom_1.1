@@ -30,22 +30,52 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
         
         if($reg=mysqli_fetch_array($registros)){
             
-         if ($reg['activacion']!=1){
+         if ($reg['activacion']!=1 || $reg['token']!=$token){
                  
-                  echo "Código de reestablecimiento vencido";
-                  
+            //      echo "Código de reestablecimiento vencido";
+			 ?>
+<html lang="utf-8">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parkingdom</title>
+	<link rel="shorcut icon" type="image/x-icon" href="imagenes/favicon.ico">
+	<link rel="stylesheet" href="css/login.css">
+	<script src="js/index.js"></script>
+</head>
+
+<body>
+	<div class="box">
+		<img src="imagenes/sunroof%20(2).jpg" class="avatar">
+		<form name="login" method="post" action="login.view.php">
+			<h2>Código de reestablecimiento vencido<br />Intente de nuevo</h2>
+			<div class="inputBox">
+
+				<input onclick="login.view.php" value="Inicio" type="submit" class="boton" />
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>
+<?php   
+			 
                 }else{
                   
-               
-                   if ($reg['token']!=$token){
+              
                        
                   echo "Código de reestablecimiento vencido";
+                  
+                   $miweb=" <a href=\"http://parkingdom.site/login.view.php\" > Inicio </a>";
                        
-                   }else{
-     
-?>             
-             
-  <html lang="utf-8">
+               
+?>
+
+<html lang="utf-8">
 
 <head>
 	<meta charset="utf-8">
@@ -63,9 +93,9 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
 			<h2>Ingrese nueva contraseña: </h2>
 			<div class="inputBox">
 				<input name="contraseña" type="password" class="input" required="" />
-			<br><br>
-			<input value="Reestablecer" type="submit" class="boton" />
-                	</div>
+				<br><br>
+				<input value="Reestablecer" type="submit" class="boton" />
+			</div>
 
 		</form>
 
@@ -73,13 +103,13 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
 
 </body>
 
-    
+
 </html>
-           
-             
-             
-             
-             
+
+
+
+
+
 <?php   
                            
                    }
@@ -102,4 +132,4 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
     
  mysqli_close($conexion);   
   
-?>    
+?>
