@@ -37,7 +37,7 @@ echo "contraseña modificada";
         <table>
             <tr><td align="center"><h2> ¡Restablecimiento exitoso!</h2></td></tr>
 			<br><br>
-<tr><td align="center"><a href="http://localhost:8081/Parkingdom/login.view.php" target="_blank" > Iniciar Sesión </a></td></tr>
+<tr><td align="center"><a href="http://parkingdom.site/login.view.php" target="_blank" > Iniciar Sesión </a></td></tr>
             </table>
         </div>
 

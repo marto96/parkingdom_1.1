@@ -8,7 +8,7 @@ include "../../conexion/conexion.php";
 //));
 
 
-        $statement = $conexion->prepare("SELECT espacio_tr  FROM transaccion where hora_salida is null and tipo_vehiculo = 'Automovil' ");
+        $statement = $conexion->prepare("SELECT espacio_tr  FROM transaccion where hora_salida is null and tipo_vehiculo = 'motocicleta' ");
         $statement->execute();
         $resultados = $statement->fetchAll();
         //print_r ($resultados);
@@ -169,7 +169,7 @@ include "../../conexion/conexion.php";
 	}
 
 	.cuadro {
-		background-image: url(../../imagenes/ParqueaderoCarros.svg);
+		background-image: url(../../imagenes/ParqueaderoMotos.svg);
 		background-repeat: no-repeat;
 		background-size: contain;
 		margin: auto;
@@ -189,17 +189,17 @@ include "../../conexion/conexion.php";
 	}
 
 	.active {
-		background-image: url(../../imagenes/AmArriba.png);
+		background-image: url(../../imagenes/AmArribam.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 	}
 
 	.modulos:hover {
-		cursor: url(../../imagenes/AmArriba.png), auto;
+		cursor: url(../../imagenes/AmArribam.png), auto;
 	}
 
 	body {
-		cursor: url(../../imagenes/AmArriba.png), auto;
+		cursor: url(../../imagenes/AmArribam.png), auto;
 	}
 
 </style>

@@ -6,13 +6,7 @@ include "conexion/conexionm.php";
 //$conexion=mysqli_connect("localhost","u858238889_root","parkingdom","u858238889_park") or
   //  die("Problemas con la conexión");
 
-    
-   
-    
-
-
 if (!isset($_GET['val'])or !isset($_GET['mail']) ){
-    
     header ('Location:login.view.php');
    
     }else{
@@ -58,25 +52,12 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
 		</form>
 
 	</div>
-
 </body>
-
 </html>
 <?php   
-			 
                 }else{
-                  
-              
-                       
-                  echo "Código de reestablecimiento vencido";
-                  
-                   $miweb=" <a href=\"http://parkingdom.site/login.view.php\" > Inicio </a>";
-                       
-               
 ?>
-
 <html lang="utf-8">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,7 +66,6 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
 	<link rel="stylesheet" href="css/login.css">
 	<script src="js/index.js"></script>
 </head>
-
 <body>
 	<div class="box">
 		<img src="imagenes/sunroof%20(2).jpg" class="avatar">
@@ -96,40 +76,15 @@ if (!isset($_GET['val'])or !isset($_GET['mail']) ){
 				<br><br>
 				<input value="Reestablecer" type="submit" class="boton" />
 			</div>
-
 		</form>
-
 	</div>
-
 </body>
-
-
 </html>
-
-
-
-
-
 <?php   
-                           
-                   }
             }
-
         }else{
-            
              echo "No hay registros";
-            
-              
-            
         }
-    
-        
     }
-
-
-
-
-    
  mysqli_close($conexion);   
-  
 ?>

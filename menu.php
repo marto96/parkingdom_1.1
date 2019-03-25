@@ -94,7 +94,7 @@ include "seguridad/seguridad.php";
 					<div class="img_moto"></div>
 					<div>
 						<p>Total cupos:</p>
-						<p id="tipo1" type="number">50</p>
+						<p id="tipo1" type="number" style="color:#fff; text-align:center;">50</p>
 						<p>Cupos ocupados:</p>
 						<p id="tipo2" type="number" class="tipo2 cant_moto_ocup">
 
@@ -109,7 +109,7 @@ include "seguridad/seguridad.php";
 					<div class="img_auto"></div>
 					<div>
 						<p>Total cupos:</p>
-						<p id="tipo1" type="number">50</p>
+						<p id="tipo1" type="number" style="color:#fff; text-align:center;">50</p>
 						<p>Cupos ocupados:</p>
 						<p id="tipo4" type="number" class="tipo2 cant_auto_ocup">
 						</p>
@@ -281,6 +281,7 @@ include "seguridad/seguridad.php";
 	</div>
 
 
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 
 	<script>
 		$(document).ready(function() {
@@ -288,7 +289,6 @@ include "seguridad/seguridad.php";
 		});
 
 	</script>
-	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script src="js/funciones.js" type="text/javascript"></script>
 
 </body>

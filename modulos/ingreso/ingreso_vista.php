@@ -26,7 +26,7 @@ include "../../seguridad/seguridad.php";
 
 		<form method="post" id="formulario" class="formulario">
 			<p>Placa <span>*</span> </p>
-			<input type="text" placeholder="Digite Placa" name="placa" id="placa" class="placa" required>
+			<input type="text" placeholder="Digite Placa" name="placa" id="placa" class="placa" min="5" maxlength="6" required>
 			<br>
 			<p>Tipo de Vehiculo <span>*</span> </p>
 			<select name="tipovehiculo" id="tipovehiculo" class="tipovehiculo" required>
@@ -45,6 +45,7 @@ include "../../seguridad/seguridad.php";
 		</form>
 	</div>
 	<iframe class="iframe" id="iframe" src="../impresiones/cupos.php" frameborder="0"></iframe>
+	<iframe class="iframe" id="iframem" src="../impresiones/cuposm.php" frameborder="0"></iframe>
 </body>
 <script src="js/entrada.js"></script>
 <script>

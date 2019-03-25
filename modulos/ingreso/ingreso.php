@@ -1,6 +1,5 @@
 <?php
 include "../../seguridad/seguridad.php";
-
 include "../../conexion/conexion.php";
 try{
     //$conexion = new PDO('mysql:host=localhost;dbname=u858238889_park','u858238889_root','parkingdom',array( PDO//::ATTR_EMULATE_PREPARES=>false,
@@ -9,14 +8,16 @@ try{
 //));
 
     date_default_timezone_set("America/Bogota");
-$tipovehiculo=$_POST['tipovehiculo'];
-//$tipovehiculo="Automovil";
 
+	$tipovehiculo=$_POST['tipovehiculo'];
+ 	$espacio= $_POST['ubicacion'];
+	$tipovehiculo="Automovil";
     $placa=$_POST['placa'];
-    //$placa="epr987";
-$fecha_actual=date("Y-m-d H:i:s");  
-$usuario=$_SESSION['usuario'];
-$espacio= $_POST['ubicacion'];
+	$fecha_actual=date("Y-m-d H:i:s");  
+	$usuario=$_SESSION['usuario'];
+    //$espacio= 7;
+    //$placa="epr980";
+
         $statement = $conexion->prepare("SELECT * FROM vehiculos where placa_vehi ='$placa'");
         $statement->execute();
         $resultados = $statement->fetch();
@@ -42,8 +43,8 @@ $espacio= $_POST['ubicacion'];
             
     }else{
         
-         $sentencia=$conexion->prepare("INSERT INTO `u858238889_park`.`transaccion` (`placa`, `tipo_vehiculo`, `hora_entrada`, `hora_salida`, `tiempo_parqueo`, `valor_tiempo`, `tipo_cliente`, `usuario`,`tarifa_tr`, `espacio_tr`) VALUES ( :placa, :tipo_vehiculo, :hora_entrada, NULL, NULL, NULL, :tipo_cliente, :usuario,:tarifa, :espacio);");
-       
+         $sentencia=$conexion->prepare("INSERT INTO `transaccion` (`placa`, `tipo_vehiculo`, `hora_entrada`, `hora_salida`, `tiempo_parqueo`, `valor_tiempo`, `tipo_cliente`, `usuario`,`tarifa_tr`, `espacio_tr`) VALUES ( :placa, :tipo_vehiculo, :hora_entrada, NULL, NULL, NULL, :tipo_cliente, :usuario,:tarifa, :espacio)");
+       //echo $sentencia;
         $sentencia->bindParam(':tipo_vehiculo',$tipovehiculo);
         $sentencia->bindParam(':placa',$placa);
         $sentencia->bindParam(':hora_entrada',$fecha_actual);
