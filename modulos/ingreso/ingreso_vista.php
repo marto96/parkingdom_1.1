@@ -46,12 +46,15 @@ include "../../seguridad/seguridad.php";
 	</div>
 	<iframe class="iframe" id="iframe" src="../impresiones/cupos.php" frameborder="0"></iframe>
 	<iframe class="iframe" id="iframem" src="../impresiones/cuposm.php" frameborder="0"></iframe>
+	
 </body>
 <script src="js/entrada.js"></script>
 <script>
 	function _ocultarIframe() {
 		document.getElementById("iframe").contentWindow.location.reload(true);
 		document.getElementById('iframe').style.display = 'none'
+document.getElementById("iframem").contentWindow.location.reload(true);
+		document.getElementById('iframem').style.display = 'none'
 	}
 
 </script>

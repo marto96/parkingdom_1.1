@@ -1,0 +1,256 @@
+/* Estilos Reporte vista */
+*{
+	font-family: 'Signika' !important;
+    font-weight: 700 !important;
+}
+*:focus{
+	outline: 2px solid #3ead47;
+}
+
+@font-face {
+	font-family: Signika;
+	src: url(../../../fuentes/Signika-Bold.ttf);
+}
+body {
+    margin: 0;
+}
+
+select {
+    text-transform: uppercase;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+option {
+    color: black;
+}
+.form-style-4 {
+    background: white;
+    border: 0 none;
+    height: 460px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 36px 30px;
+    box-sizing: border-box;
+    width: 500px;
+    margin: 55px auto;
+    position: relative;
+}
+
+
+
+.form-style-4 label {
+    width: 50%;
+    display: block;
+    float: left;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-style-4 label > span {
+    display: inline-block;
+    float: left;
+    width: 150px;
+    text-align: center;
+    font-size: 17px;
+}
+.cuadro{
+    float: left;
+    width: 50%;
+}
+.form-style-4 input[type=text] {
+   text-transform: uppercase;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+.form-style-4 input[type=text]:focus {
+    border-bottom: 1px dashed #3ead47;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+}
+
+.form-style-4 input[type=submit]:hover,
+.form-style-4 input[type=button]:hover {
+    background: #394D61;
+}
+
+input[type="date"] {
+   text-transform: uppercase;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+.boton{
+    width: 100%;
+    margin-left: 50%;
+    background-color: #3ead47!important;
+    color: #fff!important;
+}
+th{
+	background: #3ead47;
+    font-size: 15px;
+    position: sticky;
+    top: 0;
+}
+th,
+td {
+    padding: 5px;
+}
+
+thead {
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+    text-transform: uppercase;
+}
+
+tbody {
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #369681;
+    color: white;
+}
+.cabecera{
+	width: 90%;
+    height: 120px;
+    margin: auto;
+    border: 1px solid;
+}
+.img{
+	width: 50%;
+	float: left;
+}
+.img img{
+	width: 120px;
+	margin: auto;
+}
+.texto{
+	width: 50%;
+	float: left;
+}
+.contenedor {
+  height: calc(100vh - 60px);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../../imagenes/wallpapers.jpg);
+
+}
+
+
+#mainContenedor{
+    width: 90%;
+	margin: auto;
+    height: 400px;
+    overflow-y: scroll;
+    background: #fff;
+}
+
+
+.tbtabla{
+    background: #fff;
+    text-align: center;
+    width: 100%
+}
+
+.seccionToggle{
+  display: none;
+  height: calc(100vh - 50px);
+  background: #fff;
+  color: #001F3F;
+  padding: 30px 0;
+  text-align: center; 
+}
+.seccionToggle a:nth-child(3){
+	float: left;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.seccionToggle a:nth-child(4){
+	float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+ .seccionToggle a input[type="button"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #c40018;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+}
+ .seccionToggle a input[type="submit"] {
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #3ead47;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 100px;
+	float: left;
+	margin-right: 20px;
+}
+.btn-toggle {
+  height: 40px;
+  line-height: 25px;
+  font-size: 24;
+  font-weight: bold;
+  color: #000;
+  display: block;
+  background: #7CFC00;
+  text-align: center; 
+    text-decoration: none;
+}
+
+ 
+@media screen and (max-width: 500px) {
+  .seccionToggle contenedor{
+    margin-top: 0; } }
+@media screen and (max-height: 550px) {
+  .seccionToggle contenerdor{
+    font-size: 40px;
+    margin-top: 0; } }

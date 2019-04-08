@@ -1,6 +1,60 @@
 <?php
-include "../../seguridad/seguridad.php";
+include "../../../seguridad/seguridad.php";
+//include "../../../conexion/conexion.php";
 ?>
+<?php
+
+    $placa = $_GET['placa'];
+    $doc = $_GET['num_documento'];
+
+$conexion = new mysqli('localhost','root','','parkingdom');
+    //
+//}catch(PDOException $e){
+//    echo "Error: " . $e->getMessage();
+//}
+if($conexion->connect_errno){
+    
+ $respuesta = [
+     'error' => true
+ ];   
+}else{
+    $conexion->set_charset("utf8");
+$statement= $conexion->prepare("SELECT a . * , b . * 
+FROM persona AS a JOIN vehiculo_persona AS c ON c.num_documento_vp = a.num_documento
+JOIN vehiculos AS b ON b.placa_vehi = c.placa_vp WHERE b.placa_vehi='$placa' and a.num_documento='$doc'");
+
+$statement->execute();
+
+$resultados = $statement->get_result();
+
+$respuesta=[];
+    
+while($fila = $resultados->fetch_assoc()){
+    $persona = [
+        
+        'tipo_usuario'  => $fila['tipo_ususario'],
+        'usuario'   => $fila['usuario'],
+        'nombre'          => $fila['nombre'],
+        'apellido'        => $fila['apellido'],
+        'direccion'       => $fila['direccion'],
+        'telefono'        => $fila['telefono'],
+        'correo'          => $fila['correo'],
+        'observaciones'   => $fila['observaciones'],
+        
+        'tipo_vehiculo'   => $fila['tipo_vehiculo'],
+        'placa'           => $fila['placa_vehi'],
+        'color'           => $fila['color'],
+        'marca'           => $fila['marca'],
+        'modelo'          => $fila['modelo'],
+        
+    ];
+}
+}
+
+    
+?>
+
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="es">
 

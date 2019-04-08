@@ -24,10 +24,12 @@ function enviarDatos() {
 		e = 0;
 	ajax = objetoAjax();
 	ajax.open("POST", "ingreso.php", !0);
+	
+	var imb = "placa=" + a + "&tipovehiculo=" + c + "&ubicacion=" + b;
+	console.log(imb);
 	ajax.onreadystatechange = function () {
 		4 == ajax.readyState && 200 == ajax.status && (e = ajax.responseText,console.log(e),
-			"correcto" == e ? (correcto_box.classList.add("active"),
-				error_box.classList.remove("active"), f.value = "", d.value = "", g.value = "") : "incorrecto" == e ? (error_box.classList.add("active"), error_box.innerHTML = "No se inserto el registro, Intente de Nuevo") : "retorno" == e && (error_box.classList.add("active"), error_box.innerHTML = "La placa ingresada ya ha sido registrada previamente, Verifique por favor")
+			"correcto" == e ?(document.getElementById("iframem").contentWindow.location.reload(true),document.getElementById("iframe").contentWindow.location.reload(true),correcto_box.classList.add("active"),window.open('../impresiones/impresion_entrada.php?'+imb,'popup','width=1000,height=700'),error_box.classList.remove("active"), f.value = "", d.value = "", g.value = "") : "incorrecto" == e ? (error_box.classList.add("active"), error_box.innerHTML = "No se inserto el registro, Intente de Nuevo") : "retorno" == e && (error_box.classList.add("active"), error_box.innerHTML = "La placa ingresada ya ha sido registrada previamente, Verifique por favor")
 		)
 	};
 	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -84,6 +86,7 @@ tipo1.addEventListener("focus", function (a) {
 	a = document.getElementById("labl");
 	document.getElementById("n_ubicacion").value = "";
 	//	document.getElementById("tipovehiculo").setAttribute("disabled","false");
+	correcto_box.classList.remove("active");
 	error_box.classList.remove("active");
 	a.style.display = "none";
 	"motocicleta" == tipo.value ? (document.getElementById("ubicacion_auto").style.display = "none", document.getElementById("ubicacion_moto").style.display = "block") : "Automovil" == tipo.value && (document.getElementById("ubicacion_auto").style.display = "block", document.getElementById("ubicacion_moto").style.display = "none")

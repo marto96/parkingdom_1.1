@@ -258,6 +258,9 @@ td {
 	width: 200px;
 	height: 40px;
 }
+
+.aviso_eliminar p {}
+
 .botons {
 	position: absolute;
 	left: 45.5%;

@@ -7,33 +7,24 @@ include "../../conexion/conexion.php";
 	$nombres = $_POST['nombres'];
 	$apellidos = $_POST['apellidos'];
 	$correo = $_POST['correo'];
+	$tipo = $_POST['tipo'];
 	$usuario = $_POST['usuario'];
-	$password = $_POST['contraseña'];
+	$password = sha1($_POST['contra']);
 
-    $consulta = $conexion->prepare("INSERT INTO `usuario`(`usuario`, `password`, `nombre`, `apellidos`, `correo`) VALUES ( :usuario, :password, :nombres, :apellidos, :correo_electronico)");
+    $consulta = $conexion->prepare("INSERT INTO `usuario`(`usuario`, `tipo`, `password`, `nombre`, `apellidos`, `correo`) VALUES ( :usuario,:tipo, :password, :nombres, :apellidos, :correo_electronico)");
 	$consulta->bindParam(':nombres',$nombres);
 	$consulta->bindParam(':apellidos',$apellidos);
 	$consulta->bindParam(':correo_electronico',$correo);
 	$consulta->bindParam(':usuario',$usuario);
+	$consulta->bindParam(':tipo',$tipo);
 	$consulta->bindParam(':password',$password);
 	
 	// ejecutar la consulta
 
 	if($consulta->execute()){
-		 ?>
-<script>
-    alert('Usuario Creado con exito');
-    window.location.href = 'crear_operario.php';
-
-</script>
-<?php    
+		echo "funciona";
     }else {
-           ?>
-<script>
-    alert('Error, verifique por favor');
-    window.location.href = 'crear_operario.php';
+        		echo "nofunciona";
 
-</script>
-<?php   
-        }
+                }
 ?>
